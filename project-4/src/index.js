@@ -6,7 +6,9 @@ import {
 import { AppProvider } from './context.';
 import './index.css';
 import Home from './pages/Home/Home';
+import SignUp from './pages/SignUp/SignUp';
 import About from "./pages/About/About";
+import Userprofile from './pages/Userprofile/Userprofile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
