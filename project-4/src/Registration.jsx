@@ -35,7 +35,7 @@ const RegistrationForm = () => {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-        // history.push("/Login");
+        history.push("/Login");
       });
   };
 
