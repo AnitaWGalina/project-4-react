@@ -1,0 +1,85 @@
+.header {
+text-align: center;
+
+/* border: solid; */
+/* height: 50px; */
+/* background-image: url(https://img.freepik.com/free-photo/high-angle-aesthetic-wallpaper-with-gold-bars_23-2149872246.jpg?size=626&ext=jpg&ga=GA1.2.588483381.1688244677&semt=ais); */
+background-color:bisque;
+background-color: cornflowerblue;
+}
+
+.st1{
+    text-align: center;
+    min-height: 100vh;
+
+    background-image: url(https://img.freepik.com/premium-psd/100-dollars-collection-10-isolated-banknotes_201638-14.jpg?size=626&ext=jpg&ga=GA1.2.588483381.1688244677&semt=sph);
+
+}
+
+.name{
+    margin: 10px;
+    margin-right: 90px;
+}
+
+.email{
+    margin: 20px;
+    margin-left:66px;
+}
+
+.dob{
+    margin: 20px;
+
+}
+
+.gender{
+    margin: 20px;
+    margin-right: 95px;
+}
+
+.location{
+    margin: 20px;
+    margin-right: 95px;
+}
+
+.typeOfInvestment{
+    margin: 20px;
+    margin-left: 30px;
+}
+
+.header1{
+    text-align: center;
+    border: solid;
+    background-color:darkslategray;
+}
+
+.investedOn{
+    margin: 20px;
+    margin-right: 30px;
+}
+
+.interest{
+    margin: 20px;
+    margin-right: 35px;
+}
+
+.balance{
+    margin: 20px;
+    margin-right: 50px;
+}
+
+.button1{
+    margin-right: 10px;
+    background-color: brown;
+}
+
+.button2{
+    margin-right: 10px;
+    background-color: brown;
+}
+
+.button3{
+    margin-right: 10px;
+    background-color:darkgreen;
+}
+
+
