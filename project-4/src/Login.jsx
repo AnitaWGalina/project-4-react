@@ -1,10 +1,10 @@
 import "./Login.css";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom";
+// import { useHistory } from "react-router-dom/cjs/react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const Login = () => {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-        history.push("/Profile");
+        // history.push("/Profile");
       });
   };
 

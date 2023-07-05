@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Registration.css";
-import { useHistory } from "react-router-dom/cjs/react-router-dom";
+// import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 const RegistrationForm = () => {
   const [name, setName] = useState("");
@@ -11,7 +11,7 @@ const RegistrationForm = () => {
   const [country, setCountry] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [typeOfInvestment, setTypeOfInvestement] =useState("")
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ const RegistrationForm = () => {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-        history.push("/Login");
+        // history.push("/Login");
       });
   };
 
@@ -121,11 +121,13 @@ const RegistrationForm = () => {
         </div>
 
         <div>
-          
+          <label>Type of investment</label>
+          <select name="investment" onChange={(e) => setTypeOfInvestement(e.target.value)}>
+            <option value={'Shares'}>Shares</option>
+            <option value={'Bills'}>Bills</option>
+            <option value={'Bonds'}>Bonds</option>
+          </select>
         </div>
-
-
-
 
         <button type="submit">Register</button>
       </form>
