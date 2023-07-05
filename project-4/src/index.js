@@ -6,7 +6,7 @@ import {
 import { AppProvider } from './context.';
 import './index.css';
 import Home from './pages/Home/Home';
-import SignUp from './pages/SignUp/SignUp';
+import SignUp from './pages/Registration/Registration';
 import About from "./pages/About/About";
 import Userprofile from './pages/Userprofile/Userprofile';
 
@@ -16,7 +16,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path = "/" element = {<Home />}>
-          <Route path = "signup" element = {<SignUp />} />
+          <Route path = "registration" element = {<Registration />} />
           <Route path = "about" element = {<About />} />
           <Route path = "profile" element = {<Userprofile />} />
         </Route>
