@@ -12,8 +12,8 @@ background-color: cornflowerblue;
     text-align: center;
     min-height: 100vh;
 
-    background-image: url(https://img.freepik.com/premium-psd/100-dollars-collection-10-isolated-banknotes_201638-14.jpg?size=626&ext=jpg&ga=GA1.2.588483381.1688244677&semt=sph);
-
+    background-image: url(https://img.freepik.com/premium-psd/100-dollars-collection-10-isolated-banknotes_201638-14.jpg?size=626&ext=jpg&ga=GA1.1.588483381.1688244677&semt=sph);
+    /* background-repeat: no-repeat; */
 }
 
 .name{
@@ -69,17 +69,16 @@ background-color: cornflowerblue;
 
 .button1{
     margin-right: 10px;
+    border: solid;
     background-color: brown;
 }
 
 .button2{
     margin-right: 10px;
+    border: solid;
     background-color: brown;
 }
 
-.button3{
-    margin-right: 10px;
-    background-color:darkgreen;
-}
+
 
 

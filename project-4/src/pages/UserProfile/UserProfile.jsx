@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './UserProfile.css'
 
@@ -9,20 +8,19 @@ const UserProfile = () => {
     dob: '1990-01-01',
     gender: 'Male',
     location: 'Nairobi',
+    investmentType: 'Stocks',
   });
 
   const [investment, setInvestment] = useState({
     investedOn: '2022-05-01',
     interestGenerated: 500,
     currentBalance: 5500,
-    investmentType: 'Stocks',
   });
   const handleInvestment = () => {
     setInvestment({
       investedOn: 'new date',
       interestGenerated: 1000, // or any other value
       currentBalance: 6000, // or any other value
-      investmentType: 'Stocks',
     });
   }
   const [isEditing, setIsEditing] = useState(false);
@@ -36,13 +34,13 @@ const UserProfile = () => {
     // Save updated user details to the backend if necessary
   };
 
-  // const handleChangePassword = () => {
-  //   setIsEditing(true);
-  //   // Logic for changing password
-  // };
+  const handleChangePassword = () => {
+    setIsEditing(true);
+    // Logic for changing password
+  };
 
-  const { name, email, dob, location, } = user;
-  const { investedOn, interestGenerated, currentBalance, investmentType  } = investment;
+  const { name, email, dob, location, investmentType } = user;
+  const { investedOn, interestGenerated, currentBalance } = investment;
   const [gender, setGender] = useState("");
 
   return (
@@ -108,37 +106,66 @@ onChange={(e) => setGender(e.target.value)}
           <span>{location}</span>
         )}
       </div>
+      <div class='typeOfInvestment'>
+        <label>Type of Investment:</label>
+        {isEditing ? (
+          <input
+            type="text"
+            value={investmentType}
+            onChange={(e) => setUser({ ...user, investment: e.target.value })}
+          />
+        ) : (
+          <span>{investmentType}</span>
+        )}
+      </div>
+
 
 
       <h2 class='header1'>INVESTMENT DETAILS</h2>
-
-      <div class='typeOfInvestment'>
-        <label>Investment Type:</label>
-          <span>{investmentType}</span>
-      </div>
-
       <div class='investedOn'>
         <label>Invested On:</label>
+        {isEditing ? (
+          <input
+            type="text"
+            value={investedOn}
+            onChange={(e) => setUser({ ...user, investedOn: e.target.value })}
+          />
+        ) : (
           <span>{investedOn}</span>
+        )}
       </div>
-
       <div class='interest'>
         <label>Interest Generated:</label>
+        {isEditing ? (
+          <input
+            type="text"
+            value={interestGenerated}
+            onChange={(e) => setUser({ ...user, interestGenerated: e.target.value })}
+          />
+        ) : (
           <span>{interestGenerated}</span>
+        )}
       </div>
-
       <div class='balance'>
         <label>Current Balance:</label>
+        {isEditing ? (
+          <input
+            type="text"
+            value={currentBalance}
+            onChange={(e) => setUser({ ...user, currentBalance: e.target.value })}
+          />
+        ) : (
           <span>{currentBalance}</span>
+        )}
       </div>
 
       <div>
         {isEditing ? (
           <button onClick={handleSave} class='button1'>Save</button>
         ) : (
-          <button onClick={handleEdit} class='button2'>Edit User Details</button>
+          <button onClick={handleEdit} class='button2'>Edit</button>
         )}
-        <span onClick={handleInvestment}></span>
+        <button onClick={handleChangePassword} class='button3'>Change Password</button>
       </div>
     </div>
   );
