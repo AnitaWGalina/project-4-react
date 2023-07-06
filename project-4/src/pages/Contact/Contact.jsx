@@ -16,7 +16,7 @@ const Contact = () => {
         <div className="contact-info">
           <div className="info-box">
             <h3 className="info-title">Office</h3>
-            <p className="info-text">NgongLanePlazaaa, NairobiiiCity</p>
+            <p className="info-text">Ngong Lane Plaza, Nairobi City</p>
           </div>
           <div className="info-box">
             <h3 className="info-title">Phone</h3>

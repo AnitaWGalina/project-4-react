@@ -4,6 +4,7 @@ import "./Navbar.css";
 import logoImg from "../../images/logo1.jpg";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
+
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleNavbar = () => setToggleMenu(!toggleMenu);

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Registration.css";
 // import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
@@ -12,6 +13,8 @@ const RegistrationForm = () => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [typeOfInvestment, setTypeOfInvestement] =useState("")
   // const history = useHistory();
+
+  // const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +38,8 @@ const RegistrationForm = () => {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-        history.push("/Login");
+        // history.push("/Login");
+        // navigate('/login')
       });
   };
 

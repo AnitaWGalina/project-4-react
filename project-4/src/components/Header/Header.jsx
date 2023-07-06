@@ -8,7 +8,7 @@ const Header = () => {
               <Navbar />
               <div className='header-content flex flex-c text-center text-black'>
                   <h2 className='header-title text-capitalize'>Invest With The Best </h2><br />
-                  <p className='header-text fs-18 fw-3'>Welcome to our investment program !! ITS SUPPER SIMPLE !! earn your first profit today!!!!! </p>
+                  <p className='header-text fs-18 fw-3'>Welcome to our investment program !! IT'S SUPER SIMPLE !! Earn your first profit today!!!!! </p>
               </div>
           </header>
       </div>
