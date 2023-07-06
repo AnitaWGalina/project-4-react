@@ -8,7 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const history = useHistory();
-   const navigate = useNavigate();
+  //  const navigate = useNavigate();
   
 
 
@@ -29,7 +29,7 @@ const Login = () => {
       .then((data) => {
         console.log(data);
         // history.push("/Profile");
-          navigate("/UserProfile");
+          // navigate("/UserProfile");
       });
   };
 

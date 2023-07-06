@@ -122,7 +122,7 @@ onChange={(e) => setGender(e.target.value)}
 
 
       <h2 className='header1'>INVESTMENT DETAILS</h2>
-      <div className='investedOn'>
+      <div class='investedOn'>
         <label>Invested On:</label>
         {isEditing ? (
           <input

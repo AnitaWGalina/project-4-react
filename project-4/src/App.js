@@ -5,8 +5,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Registration from "./pages/Registration/Registration";
 import Login from "./Login";
-
-
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
@@ -25,7 +23,7 @@ function App() {
       <div className="App">
         <>
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/header" element={<Header />} />
             <Route exact path="/registration" element={<Registration />} />
