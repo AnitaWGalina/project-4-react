@@ -14,7 +14,7 @@ import Footer from"./components/Footer/Footer";
 import UserProfile from"./pages/UserProfile/UserProfile";
 
 import "./App.css";
-// createRoot(document.getElementById("root"));
+
 
 function App() {
  const root = ReactDOM.createRoot(document.getElementById("root"));
