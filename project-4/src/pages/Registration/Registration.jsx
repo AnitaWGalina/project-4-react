@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Registration.css";
-// import { useHistory } from "react-router-dom/cjs/react-router-dom";
+
 
 const RegistrationForm = () => {
   const [name, setName] = useState("");
@@ -12,14 +12,13 @@ const RegistrationForm = () => {
   const [country, setCountry] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [typeOfInvestment, setTypeOfInvestement] =useState("")
-  // const history = useHistory();
-
-  // const navigate = useNavigate()
+  
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:9292/registration", {
+    fetch("http://localhost:3001/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,8 +37,8 @@ const RegistrationForm = () => {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-        // history.push("/Login");
-        // navigate('/login')
+      
+        navigate('/Login');
       });
   };
 

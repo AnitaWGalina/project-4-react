@@ -44,9 +44,9 @@ const UserProfile = () => {
   const [gender, setGender] = useState("");
 
   return (
-    <div class='st1'>
-      <h1 class='header'>USER PROFILE</h1>
-      <div class='name'>
+    <div className='st1'>
+      <h1 className='header'>USER PROFILE</h1>
+      <div className='name'>
         <label>Name:</label>
         {isEditing ? (
           <input
@@ -58,7 +58,7 @@ const UserProfile = () => {
           <span>{name}</span>
         )}
       </div>
-      <div class='email'>
+      <div className='email'>
         <label>Email:</label>
         {isEditing ? (
           <input
@@ -70,7 +70,7 @@ const UserProfile = () => {
           <span>{email}</span>
         )}
       </div>
-      <div class='dob'>
+      <div className='dob'>
         <label>Date of Birth:</label>
         {isEditing ? (
           <input
@@ -82,7 +82,7 @@ const UserProfile = () => {
           <span>{dob}</span>
         )}
       </div>
-      <div class='gender'>
+      <div className='gender'>
 <label class='Label' htmlFor="gender">Gender:</label>
 <select
 id="gender"
@@ -94,7 +94,7 @@ onChange={(e) => setGender(e.target.value)}
 <option value="female">Female</option>
 </select>
 </div>
-      <div class='location'>
+      <div className='location'>
         <label>Location:</label>
         {isEditing ? (
           <input
@@ -106,7 +106,7 @@ onChange={(e) => setGender(e.target.value)}
           <span>{location}</span>
         )}
       </div>
-      <div class='typeOfInvestment'>
+      <div className='typeOfInvestment'>
         <label>Type of Investment:</label>
         {isEditing ? (
           <input
@@ -121,8 +121,8 @@ onChange={(e) => setGender(e.target.value)}
 
 
 
-      <h2 class='header1'>INVESTMENT DETAILS</h2>
-      <div class='investedOn'>
+      <h2 className='header1'>INVESTMENT DETAILS</h2>
+      <div className='investedOn'>
         <label>Invested On:</label>
         {isEditing ? (
           <input
@@ -134,7 +134,7 @@ onChange={(e) => setGender(e.target.value)}
           <span>{investedOn}</span>
         )}
       </div>
-      <div class='interest'>
+      <div className='interest'>
         <label>Interest Generated:</label>
         {isEditing ? (
           <input
@@ -146,7 +146,7 @@ onChange={(e) => setGender(e.target.value)}
           <span>{interestGenerated}</span>
         )}
       </div>
-      <div class='balance'>
+      <div className='balance'>
         <label>Current Balance:</label>
         {isEditing ? (
           <input
