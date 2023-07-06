@@ -1,6 +1,11 @@
 import React from 'react';
 import "./About.css";
+<<<<<<< HEAD
 import aboutImg from "../../images/about.jpg";
+=======
+// import aboutImg from "../../images/about.jpg";
+
+>>>>>>> main
 const About = () => {
   return (
     <>
@@ -13,7 +18,7 @@ const About = () => {
 
         <div className='about-content grid'>
           <div className='about-img'>
-            <img src = {aboutImg} alt = "" />
+            {/* <img src = {require('../../images/about.jpg')} alt = "" /> */}
           </div>
           <div className='about-text'>
             <h2 className='about-title fs-26 ls-1'>ABOUT OUR WEBSITE </h2>
