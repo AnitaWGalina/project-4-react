@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "./Registration.css";
 // import { useHistory } from "react-router-dom/cjs/react-router-dom";
 

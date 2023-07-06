@@ -16,13 +16,13 @@ const UserProfile = () => {
     interestGenerated: 500,
     currentBalance: 5500,
   });
-  const handleInvestment = () => {
+  // const handleInvestment = () => {
     setInvestment({
       investedOn: 'new date',
       interestGenerated: 1000, // or any other value
       currentBalance: 6000, // or any other value
     });
-  }
+  // }
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEdit = () => {
