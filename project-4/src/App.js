@@ -1,11 +1,11 @@
-// import './App.css';
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Registration from "./pages/Registration/Registration";
 import Login from "./Login";
-// import { ChakraProvider } from '@chakra-ui/react'
+
 
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
@@ -16,9 +16,10 @@ import Footer from"./components/Footer/Footer";
 import UserProfile from"./pages/UserProfile/UserProfile";
 
 import "./App.css";
+// createRoot(document.getElementById("root"));
 
 function App() {
-  const root = ReactDOM.createRoot(document.getElementById("root"));
+ const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
     <BrowserRouter>
       <div className="App">
