@@ -121,7 +121,7 @@ const RegistrationForm = () => {
         </div>
 
         <div>
-          <label>Type of investment</label>
+          <label>Type of Investment</label>
           <select name="investment" onChange={(e) => setTypeOfInvestement(e.target.value)}>
             <option value={'Shares'}>Shares</option>
             <option value={'Bills'}>Bills</option>
