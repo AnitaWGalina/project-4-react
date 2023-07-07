@@ -18,7 +18,7 @@ const RegistrationForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:3001/registration", {
+    fetch("http://localhost:3000/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -137,56 +137,4 @@ const RegistrationForm = () => {
     </>
   );
 };
-
-
-// const App = () => {
-//   const handleMenuOne = () => {
-//     console.log('clicked one');
-//   };
-
-//   const handleMenuTwo = () => {
-//     console.log('clicked two');
-//   };
-
-//   return (
-//     <Dropdown
-//       trigger={<button>Type of Investment</button>}
-//       menu={[
-//         <button onClick={handleMenuOne}>Shares</button>,
-//         <button onClick={handleMenuTwo}>Bills</button>,
-//         <button onClick={handleMenuTwo}>Bonds</button>,
-//       ]}
-//     />
-//   );
-// };
-
-// const Dropdown = ({ trigger, menu }) => {
-//   const [open, setOpen] = React.useState(false);
-
-//   const handleOpen = () => {
-//     setOpen(!open);
-//   };
-
-//   return (
-//     <div className="dropdown">
-//       {React.cloneElement(trigger, {
-//         onClick: handleOpen,
-//       })}
-//       {open ? (
-//         <ul className="menu">
-//           {menu.map((menuItem, index) => (
-//             <li key={index} className="menu-item">
-//               {React.cloneElement(menuItem, {
-//                 onClick: () => {
-//                   menuItem.props.onClick();
-//                   setOpen(false);
-//                 },
-//               })}
-//             </li>
-//           ))}
-//         </ul>
-//       ) : null}
-//     </div>
-//   );
-// };
 export default RegistrationForm;

@@ -1,174 +1,324 @@
-  import React, { useState } from 'react';
-import './UserProfile.css'
+// import React, { useEffect, useState } from "react";
+
+// const UserProfile = () => {
+//   const [user, setUser] = useState(null);
+
+//   useEffect(() => {
+//     // Fetch user data after login
+//     fetch("http://localhost:3000/users", {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//         // Authorization: "Bearer your-auth-token",
+//       },
+//     })
+//       .then((response) => response.json())
+//       .then((data) => {
+//         // Update the user state with the fetched data
+//         setUser(data);
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching user data:", error);
+//       });
+//   }, []);
+
+//   const [email, setEmail] = useState("");
+//   const [location, setLocation] = useState("");
+//   const [typeOfInvestment, setTypeOfInvestment] = useState("");
+//   const [editMode, setEditMode] = useState(false);
+
+//   const handleEditClick = () => {
+//     setEditMode(true);
+//   };
+
+//   const handleSaveClick = () => {
+//     // Perform save logic for updated email, location, and typeOfInvestment
+//     // Update the user data in the backend
+//     fetch("http://localhost:3000/users", {
+//       method: "PUT",
+//       headers: {
+//         "Content-Type": "application/json",
+//         // Authorization: "Bearer your-auth-token",
+//       },
+//       body: JSON.stringify({
+//         email: email,
+//         location: location,
+//         type_of_investment: typeOfInvestment,
+//       }),
+//     })
+//       .then((response) => response.json())
+//       .then((data) => {
+//         console.log("User data updated successfully:", data);
+//         setEditMode(false);
+//       })
+//       .catch((error) => {
+//         console.error("Error updating user data:", error);
+//       });
+//   };
+
+//   const handleCancelClick = () => {
+//     // Reset the form values and exit edit mode
+//     setEmail("");
+//     setLocation("");
+//     setTypeOfInvestment("");
+//     setEditMode(false);
+//   };
+//   return (
+//     <div>
+//       <h2>User Profile</h2>
+//       {user && (
+//         <>
+//           <p>
+//             <strong>Name:</strong> {user.name}
+//           </p>
+//           <p>
+//             <strong>Email:</strong>{" "}
+//             {editMode ? (
+//               <input
+//                 type="email"
+//                 value={email}
+//                 onChange={(e) => setEmail(e.target.value)}
+//               />
+//             ) : (
+//               user.email
+//             )}
+//           </p>
+//           <p>
+//             <strong>Gender:</strong> {user.gender}
+//           </p>
+//           <p>
+//             <strong>Location:</strong>{" "}
+//             {editMode ? (
+//               <input
+//                 type="text"
+//                 value={location}
+//                 onChange={(e) => setLocation(e.target.value)}
+//               />
+//             ) : (
+//               user.location
+//             )}
+//           </p>
+//           <p>
+//             <strong>Type Of Investment:</strong>{" "}
+//             {editMode ? (
+//               <input
+//                 type="text"
+//                 value={typeOfInvestment}
+//                 onChange={(e) => setTypeOfInvestment(e.target.value)}
+//               />
+//             ) : (
+//               user.type_of_investment
+//             )}
+//           </p>
+//           {editMode ? (
+//             <div id="Profile">
+//               <button onClick={handleSaveClick}>Save</button>
+//               <br />
+//               <button onClick={handleCancelClick}>Cancel</button>
+//             </div>
+//           ) : (
+//             <div id="User">
+//               <button onClick={handleEditClick}>Edit Profile</button>
+//             </div>
+            
+//           )}
+//         </>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default UserProfile;
+import React, { useEffect, useState } from "react";
 
 const UserProfile = () => {
-  const [user, setUser] = useState({
-    name: 'Lyon Bett',
-    email: 'lyonbett@example.com',
-    dob: '1990-01-01',
-    gender: 'Male',
-    location: 'Nairobi',
-    investmentType: 'Stocks',
-  });
+  const [user, setUser] = useState(null);
+  const [email, setEmail] = useState("");
+  const [location, setLocation] = useState("");
+  const [typeOfInvestment, setTypeOfInvestment] = useState("");
+  const [balance, setBalance] = useState("");
+  const [interest, setInterest] = useState("");
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+  const [editMode, setEditMode] = useState(false);
 
-  const [investment, setInvestment] = useState({
-    investedOn: '2022-05-01',
-    interestGenerated: 500,
-    currentBalance: 5500,
-  });
-  // const handleInvestment = () => {
-    setInvestment({
-      investedOn: 'new date',
-      interestGenerated: 1000, // or any other value
-      currentBalance: 6000, // or any other value
-    });
-  // }
-  const [isEditing, setIsEditing] = useState(false);
+  useEffect(() => {
+    // Fetch user data after login
+    fetch("http://localhost:3000/users", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        // Authorization: "Bearer your-auth-token",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Update the user state with the fetched data
+        setUser(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+      });
+  }, []);
 
-  const handleEdit = () => {
-    setIsEditing(true);
+  const handleEditClick = () => {
+    setEditMode(true);
   };
 
-  const handleSave = () => {
-    setIsEditing(false);
-    // Save updated user details to the backend if necessary
+  const handleSaveClick = () => {
+    // Perform save logic for updated email, location, typeOfInvestment, balance, interest, from, and to
+    // Update the user data in the backend
+    fetch("http://localhost:3000/users", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        // Authorization: "Bearer your-auth-token",
+      },
+      body: JSON.stringify({
+        email: email,
+        location: location,
+        type_of_investment: typeOfInvestment,
+        balance: balance,
+        interest: interest,
+        date_invested: from,
+        date_withdrawn: to,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("User data updated successfully:", data);
+        setEditMode(false);
+      })
+      .catch((error) => {
+        console.error("Error updating user data:", error);
+      });
   };
 
-  const handleChangePassword = () => {
-    setIsEditing(true);
-    // Logic for changing password
+  const handleCancelClick = () => {
+    // Reset the form values and exit edit mode
+    setEmail("");
+    setLocation("");
+    setTypeOfInvestment("");
+    setBalance("");
+    setInterest("");
+    setFrom("");
+    setTo("");
+    setEditMode(false);
   };
-
-  const { name, email, dob, location, investmentType } = user;
-  const { investedOn, interestGenerated, currentBalance } = investment;
-  const [gender, setGender] = useState("");
 
   return (
-    <div className='st1'>
-      <h1 className='header'>USER PROFILE</h1>
-      <div className='name'>
-        <label>Name:</label>
-        {isEditing ? (
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setUser({ ...user, name: e.target.value })}
-          />
-        ) : (
-          <span>{name}</span>
-        )}
-      </div>
-      <div className='email'>
-        <label>Email:</label>
-        {isEditing ? (
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setUser({ ...user, email: e.target.value })}
-          />
-        ) : (
-          <span>{email}</span>
-        )}
-      </div>
-      <div className='dob'>
-        <label>Date of Birth:</label>
-        {isEditing ? (
-          <input
-            type="text"
-            value={dob}
-            onChange={(e) => setUser({ ...user, dob: e.target.value })}
-          />
-        ) : (
-          <span>{dob}</span>
-        )}
-      </div>
-      <div className='gender'>
-<label class='Label' htmlFor="gender">Gender:</label>
-<select
-id="gender"
-value={gender}
-onChange={(e) => setGender(e.target.value)}
->
-<option value="select">select</option>
-<option value="male">Male</option>
-<option value="female">Female</option>
-</select>
-</div>
-      <div className='location'>
-        <label>Location:</label>
-        {isEditing ? (
-          <input
-            type="text"
-            value={location}
-            onChange={(e) => setUser({ ...user, location: e.target.value })}
-          />
-        ) : (
-          <span>{location}</span>
-        )}
-      </div>
-      <div className='typeOfInvestment'>
-        <label>Type of Investment:</label>
-        {isEditing ? (
-          <input
-            type="text"
-            value={investmentType}
-            onChange={(e) => setUser({ ...user, investment: e.target.value })}
-          />
-        ) : (
-          <span>{investmentType}</span>
-        )}
-      </div>
-
-
-
-      <h2 className='header1'>INVESTMENT DETAILS</h2>
-      <div class='investedOn'>
-        <label>Invested On:</label>
-        {isEditing ? (
-          <input
-            type="text"
-            value={investedOn}
-            onChange={(e) => setUser({ ...user, investedOn: e.target.value })}
-          />
-        ) : (
-          <span>{investedOn}</span>
-        )}
-      </div>
-      <div className='interest'>
-        <label>Interest Generated:</label>
-        {isEditing ? (
-          <input
-            type="text"
-            value={interestGenerated}
-            onChange={(e) => setUser({ ...user, interestGenerated: e.target.value })}
-          />
-        ) : (
-          <span>{interestGenerated}</span>
-        )}
-      </div>
-      <div className='balance'>
-        <label>Current Balance:</label>
-        {isEditing ? (
-          <input
-            type="text"
-            value={currentBalance}
-            onChange={(e) => setUser({ ...user, currentBalance: e.target.value })}
-          />
-        ) : (
-          <span>{currentBalance}</span>
-        )}
-      </div>
-
-      <div>
-        {isEditing ? (
-          <button onClick={handleSave} class='button1'>Save</button>
-        ) : (
-          <button onClick={handleEdit} class='button2'>Edit</button>
-        )}
-        <button onClick={handleChangePassword} class='button3'>Change Password</button>
-      </div>
+    <div>
+      <h2>User Profile</h2>
+      {user && (
+        <>
+          <p>
+            <strong>Name:</strong> {user.name}
+          </p>
+          <p>
+            <strong>Email:</strong>{" "}
+            {editMode ? (
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            ) : (
+              user.email
+            )}
+          </p>
+          <p>
+            <strong>Gender:</strong> {user.gender}
+          </p>
+          <p>
+            <strong>Location:</strong>{" "}
+            {editMode ? (
+              <input
+                type="text"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              />
+            ) : (
+              user.location
+            )}
+          </p>
+          <p>
+            <strong>Type Of Investment:</strong>{" "}
+            {editMode ? (
+              <input
+                type="text"
+                value={typeOfInvestment}
+                onChange={(e) => setTypeOfInvestment(e.target.value)}
+              />
+            ) : (
+              user.type_of_investment
+            )}
+          </p>
+          <p>
+            <strong>Balance:</strong>{" "}
+            {editMode ? (
+              <input
+                type="text"
+                value={balance}
+                onChange={(e) => setBalance(e.target.value)}
+              />
+            ) : (
+              user.balance
+            )}
+          </p>
+          <p>
+            <strong>Interest:</strong>{" "}
+            {editMode ? (
+              <input
+                type="text"
+                value={interest}
+                onChange={(e) => setInterest(e.target.value)}
+              />
+            ) : (
+              user.interest
+            )}
+          </p>
+          <p>
+            <strong>From:</strong>{" "}
+            {editMode ? (
+              <input
+                type="date"
+                value={from}
+                onChange={(e) => setFrom(e.target.value)}
+              />
+            ) : (
+              user.date_invested
+            )}
+          </p>
+          <p>
+            <strong>To:</strong>{" "}
+            {editMode ? (
+              <input
+                type="date"
+                value={to}
+                onChange={(e) => setTo(e.target.value)}
+              />
+            ) : (
+              user.date_withdrawn
+            )}
+          </p>
+          {editMode ? (
+            <div id="Profile">
+              <button onClick={handleSaveClick}>Save</button>
+              <br />
+              <button onClick={handleCancelClick}>Cancel</button>
+            </div>
+          ) : (
+            <div id="User">
+              <button onClick={handleEditClick}>Edit Profile</button>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };
 
 export default UserProfile;
+
+
+

@@ -8,14 +8,14 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const history = useHistory();
-  //  const navigate = useNavigate();
+   const navigate = useNavigate();
   
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:3001/login", {
+    fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const Login = () => {
       .then((data) => {
         console.log(data);
         // history.push("/Profile");
-          // navigate("/UserProfile");
+          navigate("/UserProfile");
       });
   };
 
@@ -65,4 +65,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login
