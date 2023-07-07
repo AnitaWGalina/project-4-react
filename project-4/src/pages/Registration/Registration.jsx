@@ -9,7 +9,7 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [location, setLocation] = useState("");
-  const [country, setCountry] = useState("");
+  const [gender, setGender] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [typeOfInvestment, setTypeOfInvestement] =useState("")
   
@@ -29,7 +29,7 @@ const RegistrationForm = () => {
         password: password,
         confirmPassword: confirmPassword,
         location: location,
-        country: country,
+        gender: gender,
         dateOfBirth: dateOfBirth,
         typeOfInvestment : typeOfInvestment
       }),
@@ -102,12 +102,12 @@ const RegistrationForm = () => {
         </div>
 
         <div>
-          <label htmlFor="country">Country:</label>
+          <label htmlFor="gender">Gender:</label>
           <input
             type="text"
-            id="country"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
+            id="gender"
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
             required
           />
         </div>
