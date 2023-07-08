@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Registration.css";
-// import { useHistory } from "react-router-dom/cjs/react-router-dom";
+
 
 const RegistrationForm = () => {
   const [name, setName] = useState("");
@@ -8,15 +9,16 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [location, setLocation] = useState("");
-  const [country, setCountry] = useState("");
+  const [gender, setGender] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [typeOfInvestment, setTypeOfInvestement] =useState("")
-  // const history = useHistory();
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:9292/registration", {
+    fetch("http://localhost:3004/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +29,7 @@ const RegistrationForm = () => {
         password: password,
         confirmPassword: confirmPassword,
         location: location,
-        country: country,
+        gender: gender,
         dateOfBirth: dateOfBirth,
         typeOfInvestment : typeOfInvestment
       }),
@@ -35,7 +37,8 @@ const RegistrationForm = () => {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-        history.push("/Login");
+
+        navigate('/Login');
       });
   };
 
@@ -99,12 +102,12 @@ const RegistrationForm = () => {
         </div>
 
         <div>
-          <label htmlFor="country">Country:</label>
+          <label htmlFor="gender">Gender:</label>
           <input
             type="text"
-            id="country"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
+            id="gender"
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
             required
           />
         </div>
@@ -134,56 +137,4 @@ const RegistrationForm = () => {
     </>
   );
 };
-
-
-// const App = () => {
-//   const handleMenuOne = () => {
-//     console.log('clicked one');
-//   };
-
-//   const handleMenuTwo = () => {
-//     console.log('clicked two');
-//   };
-
-//   return (
-//     <Dropdown
-//       trigger={<button>Type of Investment</button>}
-//       menu={[
-//         <button onClick={handleMenuOne}>Shares</button>,
-//         <button onClick={handleMenuTwo}>Bills</button>,
-//         <button onClick={handleMenuTwo}>Bonds</button>,
-//       ]}
-//     />
-//   );
-// };
-
-// const Dropdown = ({ trigger, menu }) => {
-//   const [open, setOpen] = React.useState(false);
-
-//   const handleOpen = () => {
-//     setOpen(!open);
-//   };
-
-//   return (
-//     <div className="dropdown">
-//       {React.cloneElement(trigger, {
-//         onClick: handleOpen,
-//       })}
-//       {open ? (
-//         <ul className="menu">
-//           {menu.map((menuItem, index) => (
-//             <li key={index} className="menu-item">
-//               {React.cloneElement(menuItem, {
-//                 onClick: () => {
-//                   menuItem.props.onClick();
-//                   setOpen(false);
-//                 },
-//               })}
-//             </li>
-//           ))}
-//         </ul>
-//       ) : null}
-//     </div>
-//   );
-// };
 export default RegistrationForm;

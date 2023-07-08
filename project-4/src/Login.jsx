@@ -1,15 +1,21 @@
 import "./Login.css";
 import React, { useState } from "react";
 // import { useHistory } from "react-router-dom/cjs/react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const history = useHistory();
+   const navigate = useNavigate();
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:9292/login", {
+    fetch("http://localhost:3004/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,6 +29,7 @@ const Login = () => {
       .then((data) => {
         console.log(data);
         // history.push("/Profile");
+          navigate("/UserProfile");
       });
   };
 
@@ -58,4 +65,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login
