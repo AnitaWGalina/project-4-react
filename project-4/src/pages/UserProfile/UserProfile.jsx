@@ -133,6 +133,7 @@ import React, { useEffect, useState } from "react";
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
+  const [name, setName] = useState("Ronaldo");
   const [email, setEmail] = useState("roro7@gmail.com");
   const [location, setLocation] = useState("New York");
   const [typeOfInvestment, setTypeOfInvestment] = useState("Bond");
@@ -175,6 +176,7 @@ const UserProfile = () => {
         // Authorization: "Bearer your-auth-token",
       },
       body: JSON.stringify({
+        name: name,
         email: email,
         location: location,
         type_of_investment: typeOfInvestment,
@@ -196,6 +198,7 @@ const UserProfile = () => {
 
   const handleCancelClick = () => {
     // Reset the form values and exit edit mode
+    setName("Ronaldo");
     setEmail("roro7@gmail.com");
     setLocation("New York");
     setTypeOfInvestment("Bond");
