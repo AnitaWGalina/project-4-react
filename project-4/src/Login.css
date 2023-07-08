@@ -4,13 +4,13 @@ h1{
 }
 .form-control{
   width: 300px;
-  
+
 }
 form {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: var(--grey-color);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -29,7 +29,7 @@ input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--purple-color);
   border-radius: 3px;
 }
 
@@ -38,7 +38,7 @@ button[type="submit"] {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: #4caf50;
+  background-color: var(--pink-color);
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -46,6 +46,6 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: var(--pink-color);
 }
 

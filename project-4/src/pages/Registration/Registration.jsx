@@ -12,13 +12,13 @@ const RegistrationForm = () => {
   const [gender, setGender] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [typeOfInvestment, setTypeOfInvestement] =useState("")
-  
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:3000/registration", {
+    fetch("http://localhost:3004/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const RegistrationForm = () => {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-      
+
         navigate('/Login');
       });
   };
