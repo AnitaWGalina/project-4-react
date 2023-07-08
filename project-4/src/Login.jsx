@@ -9,13 +9,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   // const history = useHistory();
    const navigate = useNavigate();
-  
+
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:3000/login", {
+    fetch("http://localhost:3004/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

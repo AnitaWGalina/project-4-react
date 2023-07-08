@@ -120,7 +120,7 @@
 //             <div id="User">
 //               <button onClick={handleEditClick}>Edit Profile</button>
 //             </div>
-            
+
 //           )}
 //         </>
 //       )}
