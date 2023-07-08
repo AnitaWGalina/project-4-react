@@ -34,5 +34,5 @@ The absence of a centralized platform that tracks personal  investments results 
 MIT License Copyright (c) 2023  ANITA GALINA.
 
 Backend link :
-https://github.com/AnitaWGalina/Phase3-sinatra-react
+https://github.com/AnitaWGalina/phase-4-project
 
