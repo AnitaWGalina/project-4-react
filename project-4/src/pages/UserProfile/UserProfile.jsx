@@ -133,13 +133,13 @@ import React, { useEffect, useState } from "react";
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
-  const [email, setEmail] = useState("");
-  const [location, setLocation] = useState("");
-  const [typeOfInvestment, setTypeOfInvestment] = useState("");
-  const [balance, setBalance] = useState("");
-  const [interest, setInterest] = useState("");
-  const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
+  const [email, setEmail] = useState("roro7@gmail.com");
+  const [location, setLocation] = useState("New York");
+  const [typeOfInvestment, setTypeOfInvestment] = useState("Bond");
+  const [balance, setBalance] = useState("1,000,00");
+  const [interest, setInterest] = useState("10%");
+  const [from, setFrom] = useState("15/07/2023");
+  const [to, setTo] = useState("15/12/2023");
   const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
@@ -196,13 +196,13 @@ const UserProfile = () => {
 
   const handleCancelClick = () => {
     // Reset the form values and exit edit mode
-    setEmail("");
-    setLocation("");
-    setTypeOfInvestment("");
-    setBalance("");
-    setInterest("");
-    setFrom("");
-    setTo("");
+    setEmail("roro7@gmail.com");
+    setLocation("New York");
+    setTypeOfInvestment("Bond");
+    setBalance("1,000,000");
+    setInterest("10%");
+    setFrom("15/07/2023");
+    setTo("15/12/2023");
     setEditMode(false);
   };
 
